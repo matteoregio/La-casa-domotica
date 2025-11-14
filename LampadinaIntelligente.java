@@ -5,16 +5,16 @@ public class LampadinaIntelligente {
     private int qta_ill;
     private String nome;
     private String colore;
-    private boolean stato;
+    public boolean stato;
 
-    public LampadinaIntelligente(int potenza, String nome){
+    public LampadinaIntelligente(int potenza){
         if(potenza < 0){
             potenza = -potenza;
         }
 
         this.potenza = potenza;
         this.qta_ill = 50;
-        this.nome = nome;
+        this.nome = "";
         this.colore = "giallo";
     }
 
@@ -30,6 +30,14 @@ public class LampadinaIntelligente {
         return this.colore;
     }
 
+    public int getQta_ill() {
+        return qta_ill;
+    }
+
+    public int getPotenza() {
+        return potenza;
+    }
+
     public void setColore(String colore) {
         this.colore = colore;
     }
@@ -40,6 +48,10 @@ public class LampadinaIntelligente {
 
     public void spegni(){
         this.stato = false;
+    }
+
+    public boolean isAccesa(){
+        return stato;
     }
 
     public void aumenta_illuminazione(){
