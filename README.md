@@ -1,1 +1,1 @@
-# La casa adomotica
+# La casa domotica
