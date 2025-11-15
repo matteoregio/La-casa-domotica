@@ -2,8 +2,9 @@
 //gruppo di: Gabu, Regio, Egeonu
 
 import graphics.*;
-import graphics.Picture;
 import pictures.*;
+import pictures.Picture;
+
 import java.util.Scanner;
 
 public class Main {
