@@ -4,28 +4,17 @@
 import graphics.*;
 import graphics.Picture;
 import pictures.*;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
 
+        Scanner in = new Scanner(System.in);
+        CasaDomotica casa = new CasaDomotica(100);
+
         Picture p = new Picture();
         p.load("planta.png");
         p.draw();
-
-        while (true){
-            System.out.println();
-        }
-    }
-}
-
-import java.util.Scanner;
-
-public class MainCasaDomotica {
-
-    public static void main(String[] args) {
-
-        Scanner in = new Scanner(System.in);
-        CasaDomotica casa = new CasaDomotica(100);     
 
         while (true) {
 
@@ -45,26 +34,24 @@ public class MainCasaDomotica {
             System.out.println("0. Esci");
             System.out.print("Scelta: ");
 
-            scelta = in.nextInt();
-        
+            int scelta = in.nextInt();
+
             switch (scelta) {
 
                 case 1: {
                     System.out.print("Nome lampadina: ");
-                    String nome = in.nextLine();
+                    String nome = in.next();
 
                     System.out.print("Potenza in watt: ");
                     int pot = in.nextInt();
 
                     System.out.print("Luminosità iniziale (0-100): ");
                     int qta = in.nextInt();
-                    in.nextLine();
 
                     System.out.print("Colore: ");
-                    String colore = in.nextLine();
+                    String colore = in.next();
 
-                    LampadinaIntelligente lamp = 
-                        new LampadinaIntelligente(nome, pot, qta, colore);
+                    LampadinaIntelligente lamp = new LampadinaIntelligente(nome, pot, qta, colore);
 
                     if (casa.add(lamp))
                         System.out.println("Lampadina aggiunta.");
@@ -75,7 +62,7 @@ public class MainCasaDomotica {
 
                 case 2: {
                     System.out.print("Nome lampadina da rimuovere: ");
-                    String nome = in.nextLine();
+                    String nome = in.next();
                     if (casa.rimuovi(nome))
                         System.out.println("Rimossa correttamente.");
                     else
@@ -85,7 +72,7 @@ public class MainCasaDomotica {
 
                 case 3: {
                     System.out.print("Nome lampadina da accendere: ");
-                    String nome = in.nextLine();
+                    String nome = in.next();
                     LampadinaIntelligente l = casa.cerca(nome);
                     if (l != null) {
                         l.accendi();
@@ -98,7 +85,7 @@ public class MainCasaDomotica {
 
                 case 4: {
                     System.out.print("Nome lampadina da spegnere: ");
-                    String nome = in.nextLine();
+                    String nome = in.next();
                     LampadinaIntelligente l = casa.cerca(nome);
                     if (l != null) {
                         l.spegni();
@@ -121,12 +108,12 @@ public class MainCasaDomotica {
 
                 case 7: {
                     System.out.print("Nome lampadina: ");
-                    String nome = in.nextLine();
+                    String nome = in.next();
                     LampadinaIntelligente l = casa.cerca(nome);
                     if (l != null) {
                         System.out.print("Nuova luminosità (0-100): ");
                         int q = in.nextInt();
-                        l.setQuantita(q);
+                        l.setQta_ill(q);
                         System.out.println("Luminosità aggiornata.");
                     } else {
                         System.out.println("Lampadina non trovata.");
@@ -136,10 +123,10 @@ public class MainCasaDomotica {
 
                 case 8: {
                     System.out.print("Nome lampadina: ");
-                    String nome = in.nextLine();
+                    String nome = in.next();
                     LampadinaIntelligente l = casa.cerca(nome);
                     if (l != null) {
-                        l.aumentaLuminosita10();
+                        l.aumenta_illuminazione();
                         System.out.println("Luminosità aumentata.");
                     } else {
                         System.out.println("Lampadina non trovata.");
@@ -149,10 +136,10 @@ public class MainCasaDomotica {
 
                 case 9: {
                     System.out.print("Nome lampadina: ");
-                    String nome = in.nextLine();
+                    String nome = in.next();
                     LampadinaIntelligente l = casa.cerca(nome);
                     if (l != null) {
-                        l.diminuisciLuminosita10();
+                        l.diminuisci_illuminazione();
                         System.out.println("Luminosità diminuita.");
                     } else {
                         System.out.println("Lampadina non trovata.");
@@ -162,11 +149,11 @@ public class MainCasaDomotica {
 
                 case 10: {
                     System.out.print("Nome lampadina: ");
-                    String nome = in.nextLine();
+                    String nome = in.next();
                     LampadinaIntelligente l = casa.cerca(nome);
                     if (l != null) {
                         System.out.print("Nuovo colore: ");
-                        String col = in.nextLine();
+                        String col = in.next();
                         l.setColore(col);
                         System.out.println("Colore aggiornato.");
                     } else {
@@ -181,7 +168,7 @@ public class MainCasaDomotica {
 
                 case 12:
                     System.out.println("Lampadine presenti: ");
-                   for (int i = 0; i < casa.getElencoLampadine().size(); i++) {
+                    for (int i = 0; i < casa.getElencoLampadine().size(); i++) {
                         System.out.println("- " + casa.getElencoLampadine().get(i));
                     }
                     break;
