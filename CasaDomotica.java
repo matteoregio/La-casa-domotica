@@ -20,10 +20,10 @@ public class CasaDomotica {
     public boolean add(LampadinaIntelligente lamp) {
         if (l.size() >= max_lamp)
             return false;
-    
-        if (cerca(lamp.getNome()) != null) 
+
+        if (cerca(lamp.getNome()) != null)
             return false;
-    
+
         l.add(lamp);
         return true;
     }
@@ -89,4 +89,3 @@ public class CasaDomotica {
                 " lampadine, su un massimo di " + max_lamp;
     }
 }
-
