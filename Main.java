@@ -2,19 +2,16 @@
 //gruppo di: Gabu, Regio, Egeonu
 
 import graphics.*;
-import pictures.*;
-import pictures.Picture;
-
 import java.util.Scanner;
 
-public class Main {
+public class Main{
     public static void main(String[] args) {
 
         Scanner in = new Scanner(System.in);
         CasaDomotica casa = new CasaDomotica(100);
 
-        Picture p = new Picture();
-        p.load("planta.png");
+
+        Picture p = new Picture("planta.jpeg");
         p.draw();
 
         while (true) {
@@ -33,7 +30,8 @@ public class Main {
             System.out.println("11. Mostra potenza attuale");
             System.out.println("12. Elenco lampadine");
             System.out.println("0. Esci");
-            System.out.print("Scelta: ");
+            System.out.println("=== MENU CASA DOMOTICA ===");
+            System.out.println("Scelta: ");
 
             int scelta = in.nextInt();
 
