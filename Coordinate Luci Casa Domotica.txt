@@ -1,0 +1,20 @@
+Coordinate Luci Casa Domotica
+
+	   x    y
+
+Ingresso: 447, 771
+Camera1: 279, 555
+Corridoio centro: 467, 348
+Tavolo cucina: 659, 391
+Sala: 801, 481
+Striscia led: (532, 493), (532, 362)
+Bagno grande centro: 295, 405 
+Bagno grande led: (338, 338), (375, 338)
+Matrimoniale centro: 225, 147
+Matrimoniale abatjour destra: 310, 315
+Matrimoniale abatjour sinistra: 145, 315
+Bagno piccolo: 486, 147 
+Camera doppia centro: 769, 244
+Camera doppia abatjour sinistra: 704, 106
+Camera doppia abatjour destra: 839, 106
+Balcone led: (1001, 163), (1001, 544)
