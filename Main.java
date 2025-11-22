@@ -23,6 +23,11 @@ public class Main{
           sid.grow(-470, -470);
           sid.draw(); */
 
+        Picture dis = new Picture("lampada1.jpeg");
+        dis.grow(-470, -470);
+        dis.translate(-20, 360);
+        dis.draw();
+
         boolean flag = true;
 
         while(flag){
