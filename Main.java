@@ -44,41 +44,39 @@ public class Main{
 
             if (scelta == 1) {
                 //Scelta della lampadina da parte dell'utente
-               Text t = new Text(447, 771, "1");
-t.draw();
-Text t1 = new Text(279, 555, "2");
-t1.draw();
-Text t2 = new Text(467, 348, "3");
-t2.draw();
-Text t3 = new Text(659, 391, "4");
-t3.draw();
-Text t4 = new Text(801, 481, "5");
-t4.draw();
-Text t5 = new Text(525, 400, "6");
-t5.draw();
-Text t6 = new Text(295, 405, "7");
-t6.draw();
-Text t7 = new Text(345, 338, "8");
-t7.draw();
-Text t8 = new Text(225, 147, "9");
-t8.draw();
-Text t9 = new Text(310, 315, "10");
-t9.draw();
-Text t10 = new Text(145, 315, "11");
-t10.draw();
-Text t11 = new Text(486, 147, "11");
-t11.draw();
-Text t12 = new Text(769, 244, "12");
-t12.draw();
-Text t13 = new Text(704, 106, "14");
-t13.draw();
-Text t14 = new Text(839, 106, "15");
-t14.draw();
-Text t15 = new Text(985, 300, "16");
-t15.draw();
- 
+                Text t = new Text(447, 771, "1");
+                t.draw();
+                Text t1 = new Text(279, 555, "2");
+                t1.draw();
+                Text t2 = new Text(467, 348, "3");
+                t2.draw();
+                Text t3 = new Text(659, 391, "4");
+                t3.draw();
+                Text t4 = new Text(801, 481, "5");
+                t4.draw();
+                Text t5 = new Text(525, 400, "6");
+                t5.draw();
+                Text t6 = new Text(295, 405, "7");
+                t6.draw();
+                Text t7 = new Text(345, 338, "8");
+                t7.draw();
+                Text t8 = new Text(225, 147, "9");
+                t8.draw();
+                Text t9 = new Text(310, 315, "10");
+                t9.draw();
+                Text t10 = new Text(145, 315, "11");
+                t10.draw();
+                Text t11 = new Text(486, 147, "11");
+                t11.draw();
+                Text t12 = new Text(769, 244, "12");
+                t12.draw();
+                Text t13 = new Text(704, 106, "14");
+                t13.draw();
+                Text t14 = new Text(839, 106, "15");
+                t14.draw();
+                Text t15 = new Text(985, 300, "16");
+                t15.draw();
 
-                
                 System.out.print("Nome lampadina: ");
                 String nome = in.next();
 
