@@ -18,6 +18,11 @@ public class Main{
         Picture p = new Picture("casa.jpg");
         p.draw();
 
+        //per modificare la grandezza dell'immagine utilizzo il compando grow mettendo però valori negativi per rimpicciolirla, valore funzionale: 470
+        /* Picture sid = new Picture("lampada1.jpeg");
+          sid.grow(-470, -470);
+          sid.draw(); */
+
         boolean flag = true;
 
         while(flag){
