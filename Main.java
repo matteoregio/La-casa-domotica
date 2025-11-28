@@ -193,12 +193,11 @@ public class Main{
             System.out.println("4. Spegni lampadina");
             System.out.println("5. Accendi tutte le lampadine");
             System.out.println("6. Spegni tutte le lampadine");
-            System.out.println("7. Imposta luminosità lampadina");
-            System.out.println("8. Aumenta luminosità +10%");
-            System.out.println("9. Diminuisci luminosità -10%");
-            System.out.println("10. Modifica colore lampadina");
-            System.out.println("11. Mostra potenza attuale");
-            System.out.println("12. Elenco lampadine");
+            System.out.println("7. Aumenta luminosità +10%");
+            System.out.println("8. Diminuisci luminosità -10%");
+            System.out.println("9. Modifica colore lampadina");
+            System.out.println("10. Mostra potenza attuale");
+            System.out.println("11. Elenco lampadine");
             System.out.println("0. Esci");
             System.out.println("=== MENU CASA DOMOTICA ===");
             System.out.println("Scelta: ");
@@ -339,26 +338,13 @@ public class Main{
                 String nome = in.next();
                 LampadinaIntelligente l = casa.cerca(nome);
                 if (l != null) {
-                    System.out.print("Nuova luminosità (0-100): ");
-                    int q = in.nextInt();
-                    l.setQta_ill(q);
-                    System.out.println("Luminosità aggiornata.");
-                } else {
-                    System.out.println("Lampadina non trovata.");
-                }
-
-            } else if (scelta == 8) {
-                System.out.print("Nome lampadina: ");
-                String nome = in.next();
-                LampadinaIntelligente l = casa.cerca(nome);
-                if (l != null) {
                     l.aumenta_illuminazione();
                     System.out.println("Luminosità aumentata.");
                 } else {
                     System.out.println("Lampadina non trovata.");
                 }
 
-            } else if (scelta == 9) {
+            } else if (scelta == 8) {
                 System.out.print("Nome lampadina: ");
                 String nome = in.next();
                 LampadinaIntelligente l = casa.cerca(nome);
@@ -369,7 +355,7 @@ public class Main{
                     System.out.println("Lampadina non trovata.");
                 }
 
-            } else if (scelta == 10) {
+            } else if (scelta == 9) {
                 System.out.print("Nome lampadina: ");
                 String nome = in.next();
                 LampadinaIntelligente l = casa.cerca(nome);
@@ -383,10 +369,10 @@ public class Main{
                     System.out.println("Lampadina non trovata.");
                 }
 
-            } else if (scelta == 11) {
+            } else if (scelta == 10) {
                 System.out.println("Potenza attuale: " + casa.getPotenzaAttuale() + " W");
 
-            } else if (scelta == 12) {
+            } else if (scelta == 11) {
                 System.out.println("Lampadine presenti: ");
                 for (int i = 0; i < casa.getElencoLampadine().size(); i++) {
                     System.out.println("- " + casa.getElencoLampadine().get(i));
