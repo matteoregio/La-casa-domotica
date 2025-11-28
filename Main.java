@@ -5,10 +5,34 @@ import graphics.*;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main{
 
+    public static Color ColoreLampadina(String c) {
+        c = c.toLowerCase();
+        Color colore;
+        if (c.equals("nero")) {
+            colore = Color.BLACK;
+            return colore;
+        } else if (c.equals("bianco")) {
+            colore = Color.WHITE;
+            return colore;
+        } else if (c.equals("blue")) {
+            colore = Color.BLUE;
+            return colore;
+        } else if (c.equals("rosso")) {
+            colore = Color.RED;
+            return colore;
+        } else if (c.equals("verde")) {
+            colore = Color.GREEN;
+            return colore;
+        } else {
+            System.out.println("Colore non valido!!");
+            return null;
+        }
+    }
     public static void disegna(int l){
 //        Ingresso: 447, 771
 //        Camera1: 279, 555
@@ -139,11 +163,10 @@ public class Main{
 
         Scanner in = new Scanner(System.in);
         CasaDomotica casa = new CasaDomotica(100);
+        boolean flag = true;
 
         Picture p = new Picture("casa.jpg");
         p.draw();
-
-        boolean flag = true;
 
         while(flag){
 
@@ -165,78 +188,61 @@ public class Main{
             System.out.println("Scelta: ");
 
             int scelta = in.nextInt();
+            ArrayList <Integer> lampadine = new ArrayList<>(16);
 
             if (scelta == 1) {
                 //Scelta della lampadina da parte dell'utente
                 {
-                    Text t = new Text(447, 771, "1");
-                    t.draw();
-                    Text t1 = new Text(279, 555, "2");
-                    t1.draw();
-                    Text t2 = new Text(467, 348, "3");
-                    t2.draw();
-                    Text t3 = new Text(659, 391, "4");
-                    t3.draw();
-                    Text t4 = new Text(801, 481, "5");
-                    t4.draw();
-                    Text t5 = new Text(532, 493, "6");
-                    t5.draw();
-                    Text t6 = new Text(295, 405, "7");
-                    t6.draw();
-                    Text t7 = new Text(345, 338, "8");
-                    t7.draw();
-                    Text t8 = new Text(225, 147, "9");
-                    t8.draw();
-                    Text t9 = new Text(310, 315, "10");
-                    t9.draw();
-                    Text t10 = new Text(145, 315, "11");
-                    t10.draw();
-                    Text t11 = new Text(486, 147, "11");
-                    t11.draw();
-                    Text t12 = new Text(769, 244, "12");
-                    t12.draw();
-                    Text t13 = new Text(704, 106, "14");
-                    t13.draw();
-                    Text t14 = new Text(839, 106, "15");
-                    t14.draw();
-                    Text t15 = new Text(985, 300, "16");
-                    t15.draw();
+                    Text t1  = new Text(447, 771, "1");  t1.draw();
+                    Text t2  = new Text(279, 555, "2");  t2.draw();
+                    Text t3  = new Text(467, 348, "3");  t3.draw();
+                    Text t4  = new Text(659, 391, "4");  t4.draw();
+                    Text t5  = new Text(801, 481, "5");  t5.draw();
+                    Text t6  = new Text(532, 493, "6");  t6.draw();
+                    Text t7  = new Text(295, 405, "7");  t7.draw();
+                    Text t8  = new Text(345, 338, "8");  t8.draw();
+                    Text t9  = new Text(225, 147, "9");  t9.draw();
+                    Text t10 = new Text(310, 315, "10"); t10.draw();
+                    Text t11 = new Text(145, 315, "11"); t11.draw();
+                    Text t12 = new Text(486, 147, "12"); t12.draw();
+                    Text t13 = new Text(769, 244, "13"); t13.draw();
+                    Text t14 = new Text(704, 106, "14"); t14.draw();
+                    Text t15 = new Text(839, 106, "15"); t15.draw();
+                    Text t16 = new Text(985, 300, "16"); t16.draw();
 
-                    t.setText("");
-                    t.draw();
-                    t1.setText("");
-                    t1.draw();
-                    t2.setText("");
-                    t2.draw();
-                    t3.setText("");
-                    t3.draw();
-                    t4.setText("");
-                    t4.draw();
-                    t5.setText("");
-                    t5.draw();
-                    t6.setText("");
-                    t6.draw();
-                    t7.setText("");
-                    t7.draw();
-                    t8.setText("");
-                    t8.draw();
-                    t9.setText("");
-                    t9.draw();
-                    t10.setText("");
-                    t10.draw();
-                    t11.setText("");
-                    t11.draw();
-                    t12.setText("");
-                    t12.draw();
-                    t13.setText("");
-                    t13.draw();
-                    t14.setText("");
-                    t14.draw();
-                    t15.setText("");
-                    t15.draw();
+
+//                    t2.setText("");
+//                    t2.draw();
+//                    t3.setText("");
+//                    t3.draw();
+//                    t4.setText("");
+//                    t4.draw();
+//                    t5.setText("");
+//                    t5.draw();
+//                    t6.setText("");
+//                    t6.draw();
+//                    t7.setText("");
+//                    t7.draw();
+//                    t8.setText("");
+//                    t8.draw();
+//                    t9.setText("");
+//                    t9.draw();
+//                    t10.setText("");
+//                    t10.draw();
+//                    t11.setText("");
+//                    t11.draw();
+//                    t12.setText("");
+//                    t12.draw();
+//                    t13.setText("");
+//                    t13.draw();
+//                    t14.setText("");
+//                    t14.draw();
+//                    t15.setText("");
+//                    t15.draw();
+//                    t16.setText("");
+//                    t16.draw();
 
                 }
-                
 
                 System.out.print("Nome lampadina: ");
                 String nome = in.next();
@@ -246,44 +252,30 @@ public class Main{
                 int qta = in.nextInt();
                 System.out.print("Colore: ");
                 String colore = in.next();
+                Color c = ColoreLampadina(colore);
                 System.out.println("Scegli la tua lampadina: ");
-                System.out.println("Ingresso: 447, 771 (1)\n" +
-                        "camera1 (2)\n" +
-                        "corridoio centro (3)\n" +
-                        "tavolo cucina (4)\n" +
-                        "sala (5)" +
-                        "striscia led cucina (6)" +
-                        "bagno grande centro (7)" +
-                        "bagno grande led (8)\n" +
-                        "matrimoniale centro (9)\n" +
-                        "matrimoniale abatjour destra (10)\n" +
-                        "matrimoniale abatjour sinistra (11)\n" +
-                        "bagno piccolo (12)\n" +
-                        "camera doppia centro (13)\n" +
-                        "camera doppia abatjour sinistra (14)\n" +
-                        "camera doppia abatjour destra (15)\n" +
-                        "balcone led (16)");
+                System.out.println("""
+                        Ingresso: 447, 771 (1)
+                        camera1 (2)
+                        corridoio centro (3)
+                        tavolo cucina (4)
+                        sala (5)\
+                        striscia led cucina (6)\
+                        bagno grande centro (7)\
+                        bagno grande led (8)
+                        matrimoniale centro (9)
+                        matrimoniale abatjour destra (10)
+                        matrimoniale abatjour sinistra (11)
+                        bagno piccolo (12)
+                        camera doppia centro (13)
+                        camera doppia abatjour sinistra (14)
+                        camera doppia abatjour destra (15)
+                        balcone led (16)""");
 
                 int lampaScelta = in.nextInt();
-                int conta = 0;
-                int[] v = new int[16];
-                for (int i = 0; i < v.length; i++) {
-                    while(lampaScelta == v[i] || lampaScelta > 16 || lampaScelta <= 0){
-                        //reinserimento della lampadina in caso l'utente abbia messo un valore gia presente o diverso da quelli presenti
-                        System.out.println("La posizione è gia occupata, inserisci una nuova lampadina: ");
-                        lampaScelta = in.nextInt();
-                    }
-                    v[conta] = lampaScelta;
-                    conta++;
-                }
 
                 disegna(lampaScelta);
-                LampadinaIntelligente lamp = new LampadinaIntelligente(nome, pot, qta, colore);
-
-                if (casa.add(lamp))
-                    System.out.println("Lampadina aggiunta.");
-                else
-                    System.out.println("ERRORE: impossibile aggiungere.");
+                LampadinaIntelligente lamp = new LampadinaIntelligente(nome, pot, qta, c);
 
             } else if (scelta == 2) {
                 System.out.print("Nome lampadina da rimuovere: ");
@@ -365,7 +357,8 @@ public class Main{
                 if (l != null) {
                     System.out.print("Nuovo colore: ");
                     String col = in.next();
-                    l.setColore(col);
+                    Color c = ColoreLampadina(col);
+                    l.setColore(c);
                     System.out.println("Colore aggiornato.");
                 } else {
                     System.out.println("Lampadina non trovata.");
