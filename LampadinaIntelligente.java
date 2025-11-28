@@ -1,13 +1,16 @@
 //classe lampadaAI
 
-public class LampadinaIntelligente {
+import java.awt.*;
+import java.io.Serializable;
+
+public class LampadinaIntelligente implements Serializable {
     private int potenza;
     private int qta_ill;
     private String nome;
-    private String colore;
+    private Color colore;
     public boolean stato;
 
-    public LampadinaIntelligente(String nome, int potenza, int qta_ill, String colore){
+    public LampadinaIntelligente(String nome, int potenza, int qta_ill, Color colore){
         if(potenza < 0){
             potenza = -potenza;
         }
@@ -26,7 +29,7 @@ public class LampadinaIntelligente {
         this.nome = nome;
     }
 
-    public String getColore(){
+    public Color getColore(){
         return this.colore;
     }
 
@@ -42,7 +45,7 @@ public class LampadinaIntelligente {
         return potenza;
     }
 
-    public void setColore(String colore) {
+    public void setColore(Color colore) {
         this.colore = colore;
     }
 
