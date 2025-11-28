@@ -1,5 +1,10 @@
 import java.util.ArrayList;
 
+// public void setpos(double x, double y){
+//         this.x = x;
+//         this.y = y;
+//     }
+
 public class CasaDomotica {
     private ArrayList<LampadinaIntelligente> l;
     private int max_lamp;
@@ -89,3 +94,4 @@ public class CasaDomotica {
                 " lampadine, su un massimo di " + max_lamp;
     }
 }
+
