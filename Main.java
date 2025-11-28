@@ -2,50 +2,12 @@
 //gruppo di: Gabu, Regio, Egeonu
 
 import graphics.*;
-
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.util.Scanner;
 
 public class Main{
-
-    public static void caricanumeri(){
-        Text t = new Text(447, 771, "1");
-        t.draw();
-        Text t1 = new Text(279, 555, "2");
-        t1.draw();
-        Text t2 = new Text(467, 348, "3");
-        t2.draw();
-        Text t3 = new Text(659, 391, "4");
-        t3.draw();
-        Text t4 = new Text(801, 481, "5");
-        t4.draw();
-        Text t5 = new Text(525, 400, "6");
-        t5.draw();
-        Text t6 = new Text(295, 405, "7");
-        t6.draw();
-        Text t7 = new Text(345, 338, "8");
-        t7.draw();
-        Text t8 = new Text(225, 147, "9");
-        t8.draw();
-        Text t9 = new Text(310, 315, "10");
-        t9.draw();
-        Text t10 = new Text(145, 315, "11");
-        t10.draw();
-        Text t11 = new Text(486, 147, "11");
-        t11.draw();
-        Text t12 = new Text(769, 244, "12");
-        t12.draw();
-        Text t13 = new Text(704, 106, "14");
-        t13.draw();
-        Text t14 = new Text(839, 106, "15");
-        t14.draw();
-        Text t15 = new Text(985, 300, "16");
-        t15.draw();
-    }
-    
     public static void main(String[] args) {
 
         Scanner in = new Scanner(System.in);
@@ -53,11 +15,6 @@ public class Main{
 
         Picture p = new Picture("casa.jpg");
         p.draw();
-
-        //per modificare la grandezza dell'immagine utilizzo il compando grow mettendo però valori negativi per rimpicciolirla, valore funzionale: 470
-        /* Picture sid = new Picture("lampada1.jpeg");
-          sid.grow(-470, -470);
-          sid.draw(); */
 
         Picture dis = new Picture("lampada1.jpeg");
         dis.grow(-470, -470);
@@ -90,7 +47,38 @@ public class Main{
 
             if (scelta == 1) {
                 //Scelta della lampadina da parte dell'utente
-                caricanumeri();
+                Text t = new Text(447, 771, "1");
+                t.draw();
+                Text t1 = new Text(279, 555, "2");
+                t1.draw();
+                Text t2 = new Text(467, 348, "3");
+                t2.draw();
+                Text t3 = new Text(659, 391, "4");
+                t3.draw();
+                Text t4 = new Text(801, 481, "5");
+                t4.draw();
+                Text t5 = new Text(525, 400, "6");
+                t5.draw();
+                Text t6 = new Text(295, 405, "7");
+                t6.draw();
+                Text t7 = new Text(345, 338, "8");
+                t7.draw();
+                Text t8 = new Text(225, 147, "9");
+                t8.draw();
+                Text t9 = new Text(310, 315, "10");
+                t9.draw();
+                Text t10 = new Text(145, 315, "11");
+                t10.draw();
+                Text t11 = new Text(486, 147, "11");
+                t11.draw();
+                Text t12 = new Text(769, 244, "12");
+                t12.draw();
+                Text t13 = new Text(704, 106, "14");
+                t13.draw();
+                Text t14 = new Text(839, 106, "15");
+                t14.draw();
+                Text t15 = new Text(985, 300, "16");
+                t15.draw();
 
                 System.out.print("Nome lampadina: ");
                 String nome = in.next();
@@ -103,6 +91,9 @@ public class Main{
 
                 System.out.print("Colore: ");
                 String colore = in.next();
+
+                System.out.println("Scegli la tua lampadina: ");
+                System.out.println("");
 
                 LampadinaIntelligente lamp = new LampadinaIntelligente(nome, pot, qta, colore);
 
