@@ -3,6 +3,7 @@ import java.util.ArrayList;
 // public void setpos(double x, double y){
 //         this.x = x;
 //         this.y = y;
+//         Canvas.getInstance().repaint();
 //     }
 
 public class CasaDomotica {
@@ -94,4 +95,5 @@ public class CasaDomotica {
                 " lampadine, su un massimo di " + max_lamp;
     }
 }
+
 
