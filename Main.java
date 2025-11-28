@@ -257,8 +257,6 @@ public class Main{
 //                    t16.setText("");
 //                    t16.draw();
 
-                }
-
                 System.out.print("Nome lampadina: ");
                 String nome = in.next();
                 System.out.print("Potenza in watt: ");
