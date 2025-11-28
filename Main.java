@@ -33,6 +33,22 @@ public class Main{
             return null;
         }
     }
+
+    //non faccio il controllo al primo inserimento
+    public static void caricaLampadina(Arraylist <Integer> v, int n){
+        int conta = 0;
+        for(int i = 0; i < v.size(); i++){
+            if(conta != 0){
+                if(n == v.get(i) && n >= 16 || n <= 0){
+                   System.out.println("Il valore non è valido, inserisci un altro valore");
+                   n = in.nextInt();
+                   }
+            }
+               v.add(conta) = n;
+               conta++;
+        }
+    }
+    
     public static void disegna(int l){
 //        Ingresso: 447, 771
 //        Camera1: 279, 555
@@ -210,7 +226,7 @@ public class Main{
                     Text t15 = new Text(839, 106, "15"); t15.draw();
                     Text t16 = new Text(985, 300, "16"); t16.draw();
 
-
+//funzione che "cancella" i numeri dell'immagine
 //                    t2.setText("");
 //                    t2.draw();
 //                    t3.setText("");
@@ -272,7 +288,10 @@ public class Main{
                         camera doppia abatjour destra (15)
                         balcone led (16)""");
 
+                //controllo della lampadina in caso abbia un valore non valido oppure è già stata inserita
                 int lampaScelta = in.nextInt();
+                caricaLampadina(lampadine, lampaScelta);
+                
 
                 disegna(lampaScelta);
                 LampadinaIntelligente lamp = new LampadinaIntelligente(nome, pot, qta, c);
