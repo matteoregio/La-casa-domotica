@@ -1,6 +1,6 @@
 //classe lampadaAI
 
-import java.awt.*;
+import graphics.*;
 import java.io.Serializable;
 
 public class LampadinaIntelligente implements Serializable {
@@ -87,3 +87,4 @@ public class LampadinaIntelligente implements Serializable {
         return "Nome: " + this.nome + ", Potenza: " + this.potenza + ", Stato: " + risposta + ", Quantità illuminazione: " + this.qta_ill + "%" + ", Colore: " + this.colore;
     }
 }
+
