@@ -44,7 +44,7 @@ public class Main{
                    n = in.nextInt();
                    }
             }
-               v.add(conta) = n;
+               v.add(conta, n);
                conta++;
         }
     }
