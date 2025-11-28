@@ -35,7 +35,7 @@ public class Main{
     }
 
     //non faccio il controllo al primo inserimento
-    public static void caricaLampadina(Arraylist <Integer> v, int n){
+    public static void caricaLampadina(ArrayList <Integer> v, int n){
         int conta = 0;
         for(int i = 0; i < v.size(); i++){
             if(conta != 0){
