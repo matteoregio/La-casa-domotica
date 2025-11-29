@@ -1,7 +1,4 @@
-import graphics.Color;
-import graphics.Picture;
-import graphics.Rectangle;
-import graphics.Text;
+import graphics.*;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -30,7 +27,7 @@ public class CasaDomotica {
         } else if (c.equals("bianco")) {
             colore = Color.WHITE;
             return colore;
-        } else if (c.equals("blue")) {
+        } else if (c.equals("blu")) {
             colore = Color.BLUE;
             return colore;
         } else if (c.equals("rosso")) {
@@ -39,7 +36,13 @@ public class CasaDomotica {
         } else if (c.equals("verde")) {
             colore = Color.GREEN;
             return colore;
-        } else {
+        } else if(c.equals("rosa")){
+            colore = Color.PINK;
+            return colore;
+        } else if(c.equals("arancione")){
+            colore = Color.ORANGE;
+            return colore;
+        }else {
             System.out.println("Colore non valido!!");
             return null;
         }
@@ -61,7 +64,7 @@ public class CasaDomotica {
         }
     }
 
-    public static void disegna(int l){
+    public static void disegna(int l, LampadinaIntelligente lamp){
 //        Ingresso: 447, 771
 //        Camera1: 279, 555
 //        Corridoio centro: 467, 348
@@ -79,14 +82,20 @@ public class CasaDomotica {
 //        Camera doppia abatjour destra: 839, 106
 //        Balcone led: (1001, 163), (1001, 544)
 
-        if(l == 1){    // Ingresso
+        if(l == 1){// Ingresso
+            Ellipse e = new Ellipse(443, 805, 17, 17);
+            e.setColor(lamp.getColore());
+            e.fill();
             Picture dis = new Picture("lampada1.jpeg");
             dis.grow(-470, -470);
             dis.translate(-60, 290);
             dis.draw();
         }
 
-        if(l == 2){    // Camera1
+        if(l == 2){// Camera1
+            Ellipse e = new Ellipse(273, 550, 17, 17);
+            e.setColor(lamp.getColore());
+            e.fill();
             Picture dis = new Picture("lampada1.jpeg");
             dis.grow(-480, -480);
             dis.translate(-230, 40);
@@ -94,6 +103,9 @@ public class CasaDomotica {
         }
 
         if(l == 3){    // Corridoio centro
+            Ellipse e = new Ellipse(462, 379, 17, 17);
+            e.setColor(lamp.getColore());
+            e.fill();
             Picture dis = new Picture("lampada1.jpeg");
             dis.grow(-480, -480);
             dis.translate(-40, -130);
@@ -101,16 +113,22 @@ public class CasaDomotica {
         }
 
         if(l == 4){    // Tavolo cucina (659, 391)
+            Ellipse e = new Ellipse(652, 391, 17, 17);
+            e.setColor(lamp.getColore());
+            e.fill();
             Picture dis = new Picture("lampada1.jpeg");
             dis.grow(-480, -480);
-            dis.translate(160, -80);
+            dis.translate(148, -118);
             dis.draw();
         }
 
         if(l == 5){    // Sala (801, 481)
+            Ellipse e = new Ellipse(801, 481, 17, 17);
+            e.setColor(lamp.getColore());
+            e.fill();
             Picture dis = new Picture("lampada1.jpeg");
             dis.grow(-480, -480);
-            dis.translate(300, 10);
+            dis.translate(298, -30);
             dis.draw();
         }
 
@@ -120,9 +138,12 @@ public class CasaDomotica {
         }
 
         if(l == 7){    // Bagno grande centro (295,405)
+            Ellipse e = new Ellipse(295, 405, 17, 17);
+            e.setColor(lamp.getColore());
+            e.fill();
             Picture dis = new Picture("lampada1.jpeg");
             dis.grow(-480, -480);
-            dis.translate(-210, -70);
+            dis.translate(-212, -90);
             dis.draw();
         }
 
@@ -239,17 +260,17 @@ public class CasaDomotica {
 //                    t16.draw();
 
 
-                System.out.print("Nome lampadina: ");
-                String nome = in.next();
-                System.out.print("Potenza in watt: ");
-                int pot = in.nextInt();
-                System.out.print("Luminosità iniziale (0-100): ");
-                 int qta = in.nextInt();
-                System.out.print("Colore: ");
-                String colore = in.next();
-                Color c = ColoreLampadina(colore);
-                System.out.println("Scegli la tua lampadina: ");
-                System.out.println("""
+        System.out.print("Nome lampadina: ");
+        String nome = in.next();
+        System.out.print("Potenza in watt: ");
+        int pot = in.nextInt();
+        System.out.print("Luminosità iniziale (0-100): ");
+        int qta = in.nextInt();
+        System.out.print("Colore: ");
+        String colore = in.next();
+        Color c = ColoreLampadina(colore);
+        System.out.println("Scegli la tua lampadina: ");
+        System.out.println("""
                         Ingresso: 447, 771 (1)
                         camera1 (2)
                         corridoio centro (3)
@@ -267,13 +288,14 @@ public class CasaDomotica {
                         camera doppia abatjour destra (15)
                         balcone led (16)""");
 
-    //controllo della lampadina in caso abbia un valore non valido oppure è già stata inserita
-    int lampaScelta = in.nextInt();
-    caricaLampadina(v, lampaScelta);
+        //controllo della lampadina in caso abbia un valore non valido oppure è già stata inserita
+        int lampaScelta = in.nextInt();
+        caricaLampadina(v, lampaScelta);
 
 
-    disegna(lampaScelta);
-    LampadinaIntelligente lamp = new LampadinaIntelligente(nome, pot, qta, c);
+        LampadinaIntelligente lamp = new LampadinaIntelligente(nome, pot, qta, c);
+        disegna(lampaScelta,lamp);
+        this.l.add(lamp);
     }
 
     public void sceltaDue(CasaDomotica c){
@@ -436,4 +458,3 @@ public class CasaDomotica {
                 " lampadine, su un massimo di " + max_lamp;
     }
 }
-
