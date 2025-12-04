@@ -61,4 +61,54 @@ public class Color
     {
        return blue;
     }
+
+    public Color diminuisciLuminosita()
+    {
+       float r = getRed();
+//        float g = getGreen();
+//        float b = getBlue();
+//
+//        r *= 0.1f;
+//        g *= 0.1f;
+//        b *= 0.1f;
+//
+//        if(r >= 255) r = 255;
+//        if(g >= 255) g = 255;
+//        if(b >= 255) b = 255;
+//
+//        if(r <= 0) r = 0;
+//        if(g <= 0) g = 0;
+//        if(b <= 0) b = 0;
+//
+//
+////        setColor(r, g, b);
+////        Canvas.getInstance().repaint();
+
+        r -= 25;
+
+
+
+        return new Color((int)r, (int)0, (int)0);
+    }
+
+    public Color aumentaLuminosita()
+    {
+        float r = getRed();
+        float g = getGreen();
+        float b = getBlue();
+
+        r *= 1.1f;
+        g *= 1.1f;
+        b *= 1.1f;
+
+        if(r >= 255) r = 255;
+        if(g >= 255) g = 255;
+        if(b >= 255) b = 255;
+
+        if(r <= 0) r = 0;
+        if(g <= 0) g = 0;
+        if(b <= 0) b = 0;
+
+        return new Color((int)r, (int)g, (int)b);
+    }
 }
