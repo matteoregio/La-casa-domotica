@@ -2,15 +2,12 @@
 //gruppo di: Gabu, Regio, Egeonu
 
 import graphics.*;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main{
 
-    public static final void stampaMenu(){
+    public static void stampaMenu(){
         System.out.println("\n=== MENU CASA DOMOTICA ===");
         System.out.println("1. Aggiungi lampadina");
         System.out.println("2. Rimuovi lampadina");
@@ -34,11 +31,14 @@ public class Main{
         CasaDomotica casa = new CasaDomotica(100);
         boolean flag = true;
 
-        Picture p = new Picture("casa.jpg");
-        p.draw();
+        try {
+            Picture p = new Picture("casa.jpg");
+            p.draw();
+        } catch (Exception e) {
+            System.out.println("Errore: " + e);
+        }
 
         while(flag){
-
             stampaMenu();
 
             int scelta = in.nextInt();
