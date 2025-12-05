@@ -1,5 +1,4 @@
 import graphics.*;
-
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -11,7 +10,7 @@ import java.util.Scanner;
 
 public class CasaDomotica {
     public ArrayList<LampadinaIntelligente> l;
-    private int max_lamp;
+    private final int max_lamp;
 
     public CasaDomotica() {
         this.l = new ArrayList<>();
@@ -36,13 +35,7 @@ public class CasaDomotica {
         } else if (c.equals("verde")) {
             colore = Color.GREEN;
             return colore;
-        } else if(c.equals("rosa")){
-            colore = Color.PINK;
-            return colore;
-        } else if(c.equals("arancione")){
-            colore = Color.ORANGE;
-            return colore;
-        }else {
+        } else {
             System.out.println("Colore non valido!!");
             return null;
         }
@@ -82,7 +75,7 @@ public class CasaDomotica {
 //        Camera doppia abatjour destra: 839, 106
 //        Balcone led: (1001, 163), (1001, 544)
 
-        if(l == 1){// Ingresso
+        if(l == 1){    // Ingresso
             Ellipse e = new Ellipse(443, 805, 17, 17);
             e.setColor(lamp.getColore());
             e.fill();
@@ -92,7 +85,7 @@ public class CasaDomotica {
             dis.draw();
         }
 
-        if(l == 2){// Camera1
+        if(l == 2){    // Camera1
             Ellipse e = new Ellipse(273, 550, 17, 17);
             e.setColor(lamp.getColore());
             e.fill();
@@ -134,7 +127,8 @@ public class CasaDomotica {
 
         if(l == 6){    // Striscia led (532, 493)
             Rectangle r = new Rectangle(532, 362, 7, 131);
-            r.draw();
+            r.setColor(lamp.getColore());
+            r.fill();
         }
 
         if(l == 7){    // Bagno grande centro (295,405)
@@ -143,67 +137,93 @@ public class CasaDomotica {
             e.fill();
             Picture dis = new Picture("lampada1.jpeg");
             dis.grow(-480, -480);
-            dis.translate(-212, -90);
+            dis.translate(-208, -103);
             dis.draw();
         }
 
         if(l == 8){    // Bagno grande led sinistra (338,338)
             Rectangle r = new Rectangle(338, 338, 37, 7);
-            r.draw();
+            r.setColor(lamp.getColore());
+            r.fill();
         }
 
         if(l == 9){   // Matrimoniale centro (225,147)
+            Ellipse e = new Ellipse(224, 162, 17, 17);
+            e.setColor(Color.GREEN);
+            e.fill();
+
             Picture dis = new Picture("lampada1.jpeg");
             dis.grow(-480, -480);
-            dis.translate(-280, -330);
+            dis.translate(-280, -350);
             dis.draw();
         }
 
         if(l == 10){   // Matrimoniale abatjour destra (310,315)
-            Picture dis = new Picture("lampada1.jpeg");
-            dis.grow(-480, -480);
-            dis.translate(-195, -165);
-            dis.draw();
+            Ellipse e = new Ellipse(304, 309, 10, 10);
+            e.setColor(lamp.getColore());
+            e.fill();
+
+            Ellipse e1 = new Ellipse(304, 309, 12, 12);
+            e1.setColor(Color.BLACK);
+            e1.draw();
         }
 
         if(l == 11){   // Matrimoniale abatjour sinistra (145,315)
-            Picture dis = new Picture("lampada1.jpeg");
-            dis.grow(-480, -480);
-            dis.translate(-360, -165);
-            dis.draw();
+            Ellipse e1 = new Ellipse(139, 309, 12, 12);
+            e1.setColor(Color.BLACK);
+            e1.draw();
+
+            Ellipse e = new Ellipse(140, 310, 11, 11);
+            e.setColor(lamp.getColore());
+            e.fill();
         }
 
         if(l == 12){   // Bagno piccolo (486,147)
+            Ellipse e = new Ellipse(486, 147, 17, 17);
+            e.setColor(Color.GREEN);
+            e.fill();
+
             Picture dis = new Picture("lampada1.jpeg");
             dis.grow(-480, -480);
-            dis.translate(-30, -330);
+            dis.translate(-17, -361);
             dis.draw();
         }
 
         if(l == 13){   // Camera doppia centro (769,244)
+            Ellipse e = new Ellipse(769, 244, 17, 17);
+            e.setColor(Color.GREEN);
+            e.fill();
+
             Picture dis = new Picture("lampada1.jpeg");
             dis.grow(-480, -480);
-            dis.translate(270, -230);
+            dis.translate(267, -265);
             dis.draw();
         }
 
         if(l == 14){   // Camera doppia abatjour sinistra (704,106)
-            Picture dis = new Picture("lampada1.jpeg");
-            dis.grow(-480, -480);
-            dis.translate(210, -370);
-            dis.draw();
+            Ellipse e = new Ellipse(698, 99, 12, 12);
+            e.setColor(Color.BLACK);
+            e.draw();
+
+            Ellipse e1 = new Ellipse(698, 99, 11, 11);
+            e1.setColor(lamp.getColore());
+            e1.fill();
         }
 
         if(l == 15){   // Camera doppia abatjour destra (839,106)
-            Picture dis = new Picture("lampada1.jpeg");
-            dis.grow(-480, -480);
-            dis.translate(345, -370);
-            dis.draw();
+            Ellipse e = new Ellipse(833, 100, 12, 12);
+            e.setColor(Color.BLACK);
+            e.draw();
+
+            Ellipse e1 = new Ellipse(833, 100, 11, 11);
+            e1.setColor(lamp.getColore());
+            e1.fill();
         }
 
         if(l == 16){   // Balcone led (1001,163)
             Rectangle r = new Rectangle(994, 165, 7, 381);
-            r.draw();
+            r.setColor(lamp.getColore());
+            r.fill();
         }
 
     }
@@ -271,13 +291,13 @@ public class CasaDomotica {
         Color c = ColoreLampadina(colore);
         System.out.println("Scegli la tua lampadina: ");
         System.out.println("""
-                        Ingresso: 447, 771 (1)
+                        Ingresso (1)
                         camera1 (2)
                         corridoio centro (3)
                         tavolo cucina (4)
-                        sala (5)\
-                        striscia led cucina (6)\
-                        bagno grande centro (7)\
+                        sala (5)
+                        striscia led cucina (6)
+                        bagno grande centro (7)
                         bagno grande led (8)
                         matrimoniale centro (9)
                         matrimoniale abatjour destra (10)
@@ -291,7 +311,6 @@ public class CasaDomotica {
         //controllo della lampadina in caso abbia un valore non valido oppure è già stata inserita
         int lampaScelta = in.nextInt();
         caricaLampadina(v, lampaScelta);
-
 
         LampadinaIntelligente lamp = new LampadinaIntelligente(nome, pot, qta, c);
         disegna(lampaScelta,lamp);
