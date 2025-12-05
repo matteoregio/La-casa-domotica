@@ -247,39 +247,6 @@ public class CasaDomotica {
         Text t15 = new Text(839, 106, "15"); t15.draw();
         Text t16 = new Text(985, 300, "16"); t16.draw();
 
-//funzione che "cancella" i numeri dell'immagine
-//                    t2.setText("");
-//                    t2.draw();
-//                    t3.setText("");
-//                    t3.draw();
-//                    t4.setText("");
-//                    t4.draw();
-//                    t5.setText("");
-//                    t5.draw();
-//                    t6.setText("");
-//                    t6.draw();
-//                    t7.setText("");
-//                    t7.draw();
-//                    t8.setText("");
-//                    t8.draw();
-//                    t9.setText("");
-//                    t9.draw();
-//                    t10.setText("");
-//                    t10.draw();
-//                    t11.setText("");
-//                    t11.draw();
-//                    t12.setText("");
-//                    t12.draw();
-//                    t13.setText("");
-//                    t13.draw();
-//                    t14.setText("");
-//                    t14.draw();
-//                    t15.setText("");
-//                    t15.draw();
-//                    t16.setText("");
-//                    t16.draw();
-
-
         System.out.print("Nome lampadina: ");
         String nome = in.next();
         System.out.print("Potenza in watt: ");
@@ -315,6 +282,39 @@ public class CasaDomotica {
         LampadinaIntelligente lamp = new LampadinaIntelligente(nome, pot, qta, c);
         disegna(lampaScelta,lamp);
         this.l.add(lamp);
+
+        t1.setText("");
+        t1.draw();
+        t2.setText("");
+        t2.draw();
+        t3.setText("");
+        t3.draw();
+        t4.setText("");
+        t4.draw();
+        t5.setText("");
+        t5.draw();
+        t6.setText("");
+        t6.draw();
+        t7.setText("");
+        t7.draw();
+        t8.setText("");
+        t8.draw();
+        t9.setText("");
+        t9.draw();
+        t10.setText("");
+        t10.draw();
+        t11.setText("");
+        t11.draw();
+        t12.setText("");
+        t12.draw();
+        t13.setText("");
+        t13.draw();
+        t14.setText("");
+        t14.draw();
+        t15.setText("");
+        t15.draw();
+        t16.setText("");
+        t16.draw();
     }
 
     public void sceltaDue(CasaDomotica c){
